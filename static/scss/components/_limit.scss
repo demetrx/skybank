@@ -1,0 +1,77 @@
+.limit__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 300px;
+    margin: 0 auto;
+
+    @media screen and (min-width: $tablet) {
+        width: 600px;
+    }
+}
+
+.limit__icon {
+    width: 35px;
+    height: 35px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background-color: $bg-three;
+    background-image: url(../img/calendar.svg);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: background-size $switch, background-color $switch;
+
+    &:hover, &:focus {
+        cursor: pointer;
+
+        background-color: $accent;
+        background-size: 65%;
+    }
+
+    @media screen and (min-width: $tablet) {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+
+.limit__body {
+    width: 255px;
+
+    font-size: 12px;
+    text-align: left;
+
+    @media screen and (min-width: $tablet) {
+        font-size: 20px;
+        width: 510px;
+    }
+}
+
+.limit__range {
+    position: relative;
+    height: 5px;
+    width: 100%;
+    margin: 3px 0;
+
+    border-radius: 4px;
+    background-color: $bg-two;
+
+    @media screen and (min-width: $tablet) {
+        height: 8px;
+    }
+}
+
+.limit__inner-range {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    border-radius: 4px;
+    background-color: $ok;
+
+}

@@ -1,0 +1,45 @@
+.register__title {
+    font-size: 24px;
+    margin-bottom: 14px;
+    color: $accent;
+
+    @media screen and (min-width: $tablet) {
+        font-size: 43px;
+    }
+}
+
+.register{
+    padding-top: 40px;
+    padding-bottom: 15px;
+
+    @media screen and (min-width: $tablet) {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+}
+
+.register .input,
+.register select {
+    height: 28px;
+    margin-bottom: 0px;
+    padding: 2px 12px;
+}
+
+.register__skybank {
+    font-size: 44px;
+    font-weight: 500;
+    color: $text-four;
+
+    @media screen and (min-width: $tablet) {
+        font-size: 48px;
+    }
+}
+
+.register__terms {
+    text-decoration: underline;
+}
+
+.register__checkbox {
+    margin-top: 4px;
+    padding-left: 3px;
+}

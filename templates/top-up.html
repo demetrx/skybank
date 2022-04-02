@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Top Up
+{% endblock %}
+
+{% block main %}
+<section class="top-up">
+    <div class="container top-up__container">
+        <h1 class="title top-up__title">Top Up</h1>
+        <p class="acc__balance">Account balance: {{ sign }}{{ cash | format}}</p>
+        <form action="/top_up" method="post" class="form ">
+            <label>
+                <span class="label">From</span>
+                <select name="source">
+                    <option selected disabled></option>
+                    <option value="atm">ATM</option>
+                    <option value="card">Another card</option>
+                    <option value="credit">Credit</option>
+                    <option value="bless">BLESS</option>
+                    <option value="birthday">Birthday present</option>
+                </select>
+            </label>
+            <label>
+                <span class="label">Sum</span>
+                <input class="input" name="sum" type="number" min="0">
+            </label>
+            <button class="button" type="submit">Go</button>
+        </form>
+    </div>
+</section>
+    
+{% endblock %}

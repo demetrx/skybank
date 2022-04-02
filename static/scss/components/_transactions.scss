@@ -1,0 +1,62 @@
+.transactions {
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+    @media screen and (min-width: $tablet) {
+        padding-top: 40px;
+    }
+}
+
+.transactions__table {
+    width: 100%;
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    color: $text-one;
+    background-color: $contrast;
+
+    @media screen and (min-width: $tablet) {
+        font-size: 18px;
+    }
+    @media screen and (min-width: $desktop) {
+        font-size: 20px;
+    }
+}
+
+.td {
+    padding: 7px;
+    border-bottom: 1px solid $bg-one;
+
+    @media screen and (min-width: $tablet) {
+        padding: 15px;
+        border-bottom: 2px solid $bg-one;
+    }
+    
+}
+
+.transaction__sum--in {
+    color: $ok;
+}
+
+.transaction__sum--out {
+    color: $accent;
+}
+
+.transaction__num {
+    font-family: "Iceland", cursive;
+}
+
+.transaction__time {
+    font-weight: 400;
+    font-size: 8px;
+
+    @media screen and (min-width: $tablet) {
+        font-size: 16px;
+    }
+    @media screen and (min-width: $desktop) {
+        font-size: 20px;
+    }
+}

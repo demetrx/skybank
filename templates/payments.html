@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Payments
+{% endblock %}
+
+{% block main %}
+
+<div class="container payments__container">
+    <button class="button" data-modal-open>Top up mobile phone credit</button>
+</div>
+
+<div class="backdrop" data-modal>
+    <div class="modal-window">
+        <button type="button" class="modal__btn--close" data-modal-close>
+            Close
+        </button>
+        <h1 class="title transfer__title">Top up</h1>
+        <p class="acc__balance payments__balance">Account balance: {{ sign }}{{ cash | format}}</p>
+        <form action="/payments" method="post" class="">
+            <label>
+                <span class="label">Phone number (10 digits)</span>
+                <input autocomplete="off" autofocus class="input" name="address" type="text">
+            </label>
+            <label>
+                <span class="label">Sum</span>
+                <input class="input" name="sum" type="number" autocomplete="off" min="0">
+            </label>
+            <button class="button" type="submit">Go</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+    <script src="../static/js/modal.js" type="module"></script>
+{% endblock %}

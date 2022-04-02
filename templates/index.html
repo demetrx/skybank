@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Card
+{% endblock %}
+
+{% block main %}
+    <section class="card__section">
+        <div class="container">
+            <div class="card">
+                <div class="card__f-row">
+                    <p class="card__skybank">skybank</p>
+                    <p class="card__d-bank">Demetrx Bank</p>
+                    <p class="card__currency">{{ client.currency }}</p>
+                </div>
+                <div class="card__s-row">
+                    <p class="card__number">
+                        {% for row in client.card %}
+                            <span>{{ row }}</span>
+                        {% endfor %}
+                    </p>
+                </div>
+                <div class="card__t-row">
+                    <p class="card__expiration">{{ client["expiration"] }}</p>
+                </div>
+                <div class="card__l-row">
+                    <p class="card__owner">{{ client.name }} {{ client.lastname }}</p>
+                <div class="card__pay-sys card__pay-sys--{{ client.pay_sys }}"></div>
+                </div> 
+            </div>
+            <p class="balance">
+                Balance: {{client.sign}}{{ client.cash | format}}
+            </p>
+        </div>
+    </section>
+    <section class="limit">
+        <div class="container">
+            <div class="limit__container">
+                <button class="limit__icon" data-modal-open></button>
+                <div class="limit__body">
+                    <p>Monthly Internet payments limit</p>
+                    <div class="limit__range"><div class="limit__inner-range" data-limit="{{ client.m_limit }}" data-left="{{ left }}"></div></div>
+                    <p>{{client.sign}}{{ left }} from {{client.sign}}{{ client.m_limit }} left</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="transactions">
+        <div class="container">
+            <table class="transactions__table">
+                <tbody>
+                    {% for row in transactions %}
+                        <tr>
+                            <td class="td transaction__time">{{ row.time }}</td>
+                            <td class="td transaction__num">{{ row.address }}</td>
+                            <td class="td transaction__sum transaction__sum--{{ row.op_type }}">{{ row.sign }}{{ row.sum | format}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <div class="backdrop js-backdrop" data-modal>
+        <div class="modal-window modal-window--limit">
+            <button type="button" class="modal__btn--close" data-modal-close>
+                Close
+            </button>
+            <h1 class="title transfer__title">Change limit</h1>
+            <p class="acc__balance">{{client.sign}}{{ left }} from {{client.sign}}{{ client.m_limit }} left</p>
+            <form action="/" method="post" class="limit__form">
+                <label>
+                    <span class="label">Limit</span>
+                    <input required class="input" name="limit" type="number" autocomplete="off">
+                </label>
+                <button class="button" type="submit">Change</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script src="../static/js/modal.js" type="module"></script>
+    <script src="../static/js/limit.js" type="module"></script>
+{% endblock %}

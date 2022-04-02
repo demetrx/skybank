@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My account
+{% endblock %}
+
+{% block main %}
+<section class="account">
+    <div class="container">
+        <h1 class="title account__title">Change PIN</h1>
+        <form action="/account" method="post" class="form">
+            <label>
+                <span>PIN</span>
+                <input autocomplete="off" autofocus class="input" name="pin" type="password" maxlength="4" minlength="4">
+            </label>
+            <label>
+                <span>New PIN</span>
+                <input class="input" name="new_pin" type="password" maxlength="4" minlength="4">
+            </label>
+            <label>
+                <span>Confirm new PIN</span>
+                <input class="input" name="confirmation" type="password" maxlength="4" minlength="4">
+            </label>
+            <button class="button" type="submit">Change PIN</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

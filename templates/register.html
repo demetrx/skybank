@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <section class="register">
+        <div class="container">
+            <h1 class="title register__title">Open an account with <span class="register__skybank">skybank</span></h1>
+
+            <form action"/register" method="post" class="form">
+                <label>
+                    <span class="label">Name</span>
+                    <input class="input" autofocus autocomplete="off" id="name" name="name"  type="text">
+                </label>
+
+                <label>
+                    <span class="label">Last name</span>
+                    <input class="input" autocomplete="off" id="lastname" name="lastname" type="text">
+                </label>
+
+                <label>
+                    <span class="label">Payment system</span>
+                    <select name="pay-sys" id="pay-sys">
+                        <option selected disabled></option>
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">MasterCard</option>
+                    </select>
+                </label>
+                
+                <label>
+                    <span class="label">Currency of the account</span>
+                    <select name="currency" id="currency">
+                        <option selected disabled></option>
+                        <option value="usd">USD</option>
+                        <option value="eur">EUR</option>
+                        <option value="gbp">GBP</option>
+                        <option value="uah">UAH</option>
+                        <option value="rub">RUB</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span class="label">Initial deposit</span>
+                    <input class="input" autocomplete="off" id="deposit" name="deposit" type="number" min="1000">
+                </label>
+
+                <label>
+                    <span class="label">Login</span>
+                    <input class="input" autocomplete="off" id="login" name="login" type="text">
+                </label>
+                <label>
+                    <span class="label">PIN</span>
+                    <input class="input" id="pin" name="pin" type="password" minlength="4" maxlength="4">
+                </label>
+                <label>
+                    <span class="label">Confirm PIN</span>
+                    <input class="input" id="confirmation" name="confirmation" type="password" min="4" max="4">
+                </label>
+                <label class="register__checkbox">
+                    <input type="checkbox" name="agree" required>
+                    <span class="register__agree">I agree with <a class="register__terms" href="https://images-cdn.9gag.com/photo/aOzB65M_700b.jpg" target="_blank">terms and conditions</a></span>
+                </label>
+                
+                <button class="button" type="submit">Apply</button>
+            </form>
+        </div>
+    </section>
+    
+    
+{% endblock %}

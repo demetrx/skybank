@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transfer
+{% endblock %}
+
+{% block main %}
+<section class="transfer">
+    <div class="container transfer__container">
+        <h1 class="title transfer__title">Transfer funds</h1>
+        <p class="acc__balance">Account balance: {{ sign }}{{ cash | format}}</p>
+        <form action="/transfer" method="post" class="form">
+            <label>
+                <span class="label">Address: card number</span>
+                <input class="input" name="address" autocomplete="off" type="text" minlength="13" maxlength="16">
+            </label>
+            <label>
+                <span class="label">Sum</span>
+                <input class="input" name="sum" type="number" autocomplete="off">
+            </label>
+            <button class="button" type="submit">Transfer</button>
+        </form>
+    </div>
+</section>
+    
+{% endblock %}
+

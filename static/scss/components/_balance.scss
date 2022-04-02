@@ -1,0 +1,27 @@
+.balance {
+    position: absolute;
+    top: -41px;
+    left: calc(50% - 55px);
+    padding: 7px;
+
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    font-size: 14px;
+    color: $text-one;
+
+    @media screen and (min-width: $tablet) {
+        top: -70px;
+        left: calc(50% + 20px);
+        padding: 20px;
+
+        font-size: 14px;
+    }
+    
+    @media screen and (min-width: $desktop) {
+        left: calc(50% + 120px);
+        font-size: 18px;
+    }
+}
+
+

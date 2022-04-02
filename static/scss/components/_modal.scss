@@ -1,0 +1,63 @@
+.backdrop--is-hidden .modal-window {
+    bottom: 0vh;
+    left: 50%;
+
+    opacity: 0;
+    transition: transform $switch, opacity $switch;
+}
+
+.backdrop--is-hidden .backdrop {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $switch;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    transition: opacity $switch;
+    z-index: 20;
+    overflow: scroll;
+}
+
+.modal-window {
+    position: relative;
+    bottom: 0vh;
+    left: 50%;
+    width: 330px;
+    padding: 80px 40px 35px 40px;
+
+    border: 1px solid $accent;
+    border-radius: 10px;
+    background-color: $bg-one;
+
+    transform: translate(-50%, 32%) scale(1);
+    transition: opacity $switch, transform $switch;
+    box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.62);
+}
+
+.modal-window--limit {
+    transform: translate(-50%, 50%) scale(1);
+}
+
+.modal__btn--close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    padding: 5px;
+    border: 0;
+    border-radius: 8px;
+    color: $accent;
+    background-color: transparent;
+    transition: color $switch;
+
+    &:hover, &:focus{
+        color: $hover;
+    }
+}
